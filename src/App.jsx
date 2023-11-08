@@ -1,33 +1,31 @@
 import { useState } from 'react'
 import './App.css'
+import {Component} from "react";
 
-function App() {
-    const [count, setCount] = useState(0)
+class App extends Component{
+    // const [count, setCount] = useState(0)
+    //
+    // const [name, setName] = useState('Chris');
 
-    const [name, setName] = useState('Chris');
 
-
-
+render() {
     return (
         <>
             <h1>Test</h1>
             <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
+                <button>
+                    count is ...
                 </button>
                 <p>
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </p>
-                <p>
-                    {name}
-                </p>
-                <button onClick={() => setName('Emilique')}>Change name</button>
             </div>
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
         </>
     )
+}
 }
 
 export default App
