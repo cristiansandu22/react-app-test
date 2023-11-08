@@ -8,7 +8,11 @@ constructor() {
     super();
 
     this.state = {
-        name: 'Chris'
+        name: {
+            firstName: 'Chris',
+            lastName: 'Sandu'
+        },
+        company: 'EmmCris Business'
     }
 }
 
@@ -19,9 +23,12 @@ render() {
         <>
             <h1>Test</h1>
             <div className="card">
-                <p>My name is {this.state.name} </p>
-                <button onClick={() => this.setState({name: 'Emilique'})}>Change name</button>
-                <button onClick={() => console.log(this.state.name)}>ConsoleLOG</button>
+                <p>My name is {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company} </p>
+                <button onClick={() => this.setState({name: {
+                        firstName: 'Emilique',
+                        lastName: 'Pavel'
+                    }})}>Change name</button>
+                <button onClick={() => console.log(this.state)}>ConsoleLOG</button>
             </div>
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
