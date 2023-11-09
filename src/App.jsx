@@ -24,10 +24,17 @@ render() {
             <h1>Test</h1>
             <div className="card">
                 <p>My name is {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company} </p>
-                <button onClick={() => this.setState({name: {
-                        firstName: 'Emilique',
-                        lastName: 'Pavel'
-                    }})}>Change name</button>
+                <button onClick={() => this.setState(
+                    () => {
+                        return {name: {
+                                firstName: 'Emilique',
+                                lastName: 'Pavel'
+                            }}
+                    },
+                    () => {
+                        console.log(this.state)
+                    }
+                )}>Change name</button>
                 <button onClick={() => console.log(this.state)}>ConsoleLOG</button>
             </div>
             <p className="read-the-docs">
