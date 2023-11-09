@@ -4,23 +4,42 @@ import {Component} from "react";
 
 class App extends Component{
 
-constructor() {
-    super();
+    constructor() {
+        super();
 
-    this.state = {
-
+        this.state = {
+            monsters: [
+                {
+                    id: 1,
+                    name: 'Cristinel'
+                },
+                {
+                    id: 2,
+                    name: 'Emilique'
+                },
+                {
+                    id: 3,
+                    name: 'Madalinutz'
+                },
+                {
+                    id: 4,
+                    name: 'Didilique'
+                }
+            ]
+        }
     }
-}
 
-render() {
+    render() {
 
 
-    return (
-        <>
-           <h1>Hello</h1>
-        </>
-    )
-}
+        return (
+            <>
+                {this.state.monsters.map(monster => {
+                    return <h1 key={monster.id}>{monster.name}</h1>;
+                })}
+            </>
+        )
+    }
 }
 
 export default App
