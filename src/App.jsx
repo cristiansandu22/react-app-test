@@ -25,9 +25,9 @@ class App extends Component{
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-            if(!response.ok) {
-                throw new Error('Network response was not ok!')
-            }
+            // if(!response.ok) {
+            //     throw new Error('Network response was not ok!')
+            // }
 
             const users = await response.json()
             this.setState(() => {
@@ -39,21 +39,6 @@ class App extends Component{
         } catch (err) {
             console.error(`Error fetching data: ${err}`)
         }
-
-        // const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        // const users = await response.json()
-        //
-        // this.setState({monsters: users}, () => {
-        //     console.log(this.state)
-        // })
-
-        // const hello = async function() {
-        //     const data = await fetch('https://jsonplaceholder.typicode.com/users')
-        //     const users = await data.json()
-        //     return this.setState({monsters: users})
-        // }
-        //
-        // hello()
     }
 
     render() {
