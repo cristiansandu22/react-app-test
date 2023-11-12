@@ -10,9 +10,11 @@ class App extends Component{
         this.state = {
             monsters: []
         }
+        console.log('constructor')
     }
 
     async componentDidMount() {
+        console.log('componentDidMount')
         // fetch('https://jsonplaceholder.typicode.com/users')
         //     .then(res => res.json())
         //     .then(data => this.setState(() => {
@@ -25,9 +27,9 @@ class App extends Component{
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-            // if(!response.ok) {
-            //     throw new Error('Network response was not ok!')
-            // }
+            if(!response.ok) {
+                throw new Error('Network response was not ok!')
+            }
 
             const users = await response.json()
             this.setState(() => {
@@ -42,7 +44,7 @@ class App extends Component{
     }
 
     render() {
-
+    console.log('render')
 
         return (
             <>
