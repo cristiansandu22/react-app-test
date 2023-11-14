@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import './App.css'
 import {Component} from "react";
+import CardList from "./components/card-list/card-list.component.jsx";
 
 class App extends Component{
 
@@ -67,18 +67,21 @@ class App extends Component{
 
         return (
             <>
+
                 <input
                     type="search"
                     placeholder='Search monsters'
                     className='search-box'
                     onChange={this.onChangeField}
                 />
-                <button onClick={() => {console.log(this.state.searchedField)}}>click</button>
-                {filteredMonsters.map(monster => {
-                    return <div key={monster.id}>
-                        <h3>{monster.name}</h3>
-                    </div>;
-                })}
+
+                {/*{filteredMonsters.map(monster => {*/}
+                {/*    return <div key={monster.id}>*/}
+                {/*        <h3>{monster.name}</h3>*/}
+                {/*    </div>;*/}
+                {/*})}*/}
+
+                <CardList />
             </>
         )
     }
