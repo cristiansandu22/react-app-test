@@ -2,7 +2,7 @@ import {Component} from "react";
 
 class CardList extends Component {
     render() {
-
+        console.log('Render from CarList component')
         const {monsters} = this.props
 
         return (
