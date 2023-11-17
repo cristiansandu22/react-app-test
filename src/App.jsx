@@ -73,7 +73,6 @@ class App extends Component{
                 <SearchBox
                     onChange={onChangeField}
                     inputPlaceholder='Search monsters'
-                    inputType='search'
                 />
 
                 <CardList monsters={filteredMonsters}/>
