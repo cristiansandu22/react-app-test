@@ -12,11 +12,9 @@ class App extends Component{
             monsters: [],
             searchedField: '',
         }
-        console.log('constructor')
     }
 
     async componentDidMount() {
-        console.log('componentDidMount')
         // fetch('https://jsonplaceholder.typicode.com/users')
         //     .then(res => res.json())
         //     .then(data => this.setState(() => {
@@ -36,8 +34,6 @@ class App extends Component{
             const users = await response.json()
             this.setState(() => {
                 return {monsters: users}
-            }, () => {
-                console.log(this.state)
             });
 
         } catch (err) {
@@ -57,7 +53,6 @@ class App extends Component{
     }
 
     render() {
-        console.log('render')
 
         const {monsters, searchedField} = this.state;
         const {onChangeField} = this;
@@ -71,8 +66,9 @@ class App extends Component{
             <>
 
                 <SearchBox
-                    onChange={onChangeField}
+                    onChangeHandler={onChangeField}
                     inputPlaceholder='Search monsters'
+                    inputClassName='search-box'
                 />
 
                 <CardList monsters={filteredMonsters}/>

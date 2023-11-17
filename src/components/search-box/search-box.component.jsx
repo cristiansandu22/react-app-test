@@ -4,16 +4,15 @@ class SearchBox extends Component {
 
     render() {
 
-        const onChange = this.props.onChange;
-        const {inputPlaceholder} = this.props
+        const {onChangeHandler, inputPlaceholder, inputClassName} = this.props
 
         return(
             <div>
                 <input
                     type='search'
-                    className='search-box'
+                    className={inputClassName}
                     placeholder={inputPlaceholder}
-                    onChange={onChange}
+                    onChange={onChangeHandler}
                 />
             </div>
         )
