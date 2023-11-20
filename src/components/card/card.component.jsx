@@ -5,6 +5,7 @@ class Card extends Component {
 
     render() {
 
+        //destructuring name from this.props.monster
         const {name} = this.props.monster
 
         return(
