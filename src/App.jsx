@@ -26,7 +26,7 @@ const App = () => {
                 inputClassName='search-box'
             />
 
-            {/*<CardList monsters={filteredMonsters}/>*/}
+            <CardList />
         </>
     )
 }
