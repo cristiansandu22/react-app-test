@@ -1,5 +1,5 @@
 import './App.css'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import CardList from "./components/card-list/card-list.component.jsx";
 import SearchBox from "./components/search-box/search-box.component.jsx";
 
@@ -9,13 +9,32 @@ const App = () => {
     console.log('render');
 
     const [searchField, setSearchField] = useState('')
+    const [monsters, setMonsters] = useState([])
 
     const onChangeField = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase()
         setSearchField(searchFieldString)
     }
 
-    console.log(searchField)
+    useEffect(() => {
+            const fetchData = async () => {
+                try {
+                    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+                    const usersData = await response.json()
+                    setMonsters(usersData)
+                } catch (err) {
+                    console.error(`You have an error which is: ${err}`)
+                }
+            }
+
+            fetchData()
+
+        }, []
+    )
+
+    const filteredMonsters = monsters.filter(monster => {
+        return monster.name.toLocaleLowerCase().includes(searchField)
+    })
 
     return(
         <>
@@ -26,7 +45,7 @@ const App = () => {
                 inputClassName='search-box'
             />
 
-            <CardList />
+            <CardList monsters={filteredMonsters} />
         </>
     )
 }
@@ -43,14 +62,14 @@ const App = () => {
 //     }
 //
 //     async componentDidMount() {
-//         // fetch('https://jsonplaceholder.typicode.com/users')
-//         //     .then(res => res.json())
-//         //     .then(data => this.setState(() => {
-//         //             return {monsters: data}
-//         //         }, () => {
-//         //             console.log(this.state)
-//         //         }
-//         //     ))
+//         fetch('https://jsonplaceholder.typicode.com/users')
+//             .then(res => res.json())
+//             .then(data => this.setState(() => {
+//                     return {monsters: data}
+//                 }, () => {
+//                     console.log(this.state)
+//                 }
+//             ))
 //
 //         try {
 //             const response = await fetch('https://jsonplaceholder.typicode.com/users')

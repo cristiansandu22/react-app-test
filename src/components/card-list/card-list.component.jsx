@@ -2,14 +2,15 @@ import {Component, useState} from "react";
 import './card-list.styles.css'
 import Card from "../card/card.component.jsx";
 
-const CardList = () => {
-
-    const [monsters, setMonsters] = useState('Christique')
+const CardList = ({monsters}) => {
 
     return(
-        <div>
-            <h1>Hello</h1>
-            <h2>{monsters}</h2>
+        <div className='grid'>
+            {monsters.map((monster) => {
+                return(
+                    <Card key={monster.id} monster={monster} />
+                )
+            })}
         </div>
     )
 }
