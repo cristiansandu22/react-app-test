@@ -1,8 +1,9 @@
+import './card.style.css'
 
-const Card = ({name}) => {
+const Card = ({monster}) => {
     return (
         <div className='card-container'>
-            <h3>{name}</h3>
+            <h3>{monster}</h3>
         </div>
     )
 }
