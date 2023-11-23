@@ -38,7 +38,6 @@ const App = () => {
 
     return(
         <>
-            <h1>Hello</h1>
             <SearchBox
                 onChangeHandler={onChangeField}
                 inputPlaceholder='Search monsters'
