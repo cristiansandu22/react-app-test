@@ -17,6 +17,7 @@ const App = () => {
         setSearchField(searchFieldString)
     }
 
+    //-----fetch monsters when the component is initially rendered------------------------------------------------------
     useEffect(() => {
             const fetchData = async () => {
                 try {
@@ -32,6 +33,7 @@ const App = () => {
 
         }, [])
 
+    //-----every time 'searchField' and 'monsters' are change -> setFilteredMonster-------------------------------------
    useEffect(() => {
        const newFilteredMonsters = monsters.filter(monster => {
            return monster.name.toLocaleLowerCase().includes(searchField)
