@@ -33,7 +33,7 @@ const App = () => {
 
         }, [])
 
-    //-----every time 'searchField' and 'monsters' are change -> setFilteredMonster-------------------------------------
+    //-----every time 'searchField' and 'monsters' are changed -> setFilteredMonster-------------------------------------
    useEffect(() => {
        const newFilteredMonsters = monsters.filter(monster => {
            return monster.name.toLocaleLowerCase().includes(searchField)
