@@ -1,3 +1,4 @@
+
 const SearchBox = ({onChangeHandler, inputPlaceholder, inputClassName}) => {
 
     return(
@@ -6,7 +7,7 @@ const SearchBox = ({onChangeHandler, inputPlaceholder, inputClassName}) => {
                 type='search'
                 className={inputClassName}
                 placeholder={inputPlaceholder}
-                onChange={onChangeHandler}
+                onChange={(e) => onChangeHandler(e)}
             />
         </div>
     )

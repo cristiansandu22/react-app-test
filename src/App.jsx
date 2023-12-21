@@ -1,7 +1,7 @@
 import './App.css'
 import {useEffect, useState} from "react";
 import CardList from "./components/card-list/card-list.component.jsx";
-import SearchBox from "./components/search-box/search-box.component.jsx";
+import SearchBox from "./components/search-box/search-box.component.tsx";
 
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
 
         }, [])
 
-    //-----every time 'searchField' and 'monsters' are changed -> setFilteredMonster-------------------------------------
+    //-----every time 'searchField' and 'monsters' are changed -> setFilteredMonster------------------------------------
    useEffect(() => {
        const newFilteredMonsters = monsters.filter(monster => {
            return monster.name.toLocaleLowerCase().includes(searchField)
