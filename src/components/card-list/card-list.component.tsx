@@ -1,22 +1,19 @@
+import {Monster} from "../../App.tsx"
 import './card-list.styles.css'
 import Card from "../card/card.component.tsx";
 
-type Monster = {
-    id: string,
-    name: string
+type CardListProps = {
+    monsters: Monster[]
 }
 
-type Monsters = {
-    monsters: Array<Monster>
-}
 
-const CardList = ({monsters}: Monsters) => {
+const CardList = ({monsters}: CardListProps) => {
 
     return(
         <div className='grid'>
-            {monsters.map((monster: Monster) => {
+            {monsters.map((monster) => {
                 return(
-                    <Card key={monster.id} monster={monster.name} />
+                    <Card key={monster.id} monster={monster} />
                 )
             })}
         </div>

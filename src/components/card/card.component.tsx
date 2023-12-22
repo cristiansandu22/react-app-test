@@ -1,13 +1,14 @@
-import './card.style.css'
+import {Monster} from "../../App.tsx"
+import "./card.style.css"
 
-type Monster = {
-    monster: string;
+type CardProps = {
+    monster: Monster
 }
 
-const Card = ({monster}: Monster) => {
+const Card = ({monster}: CardProps) => {
     return (
         <div className='card-container'>
-            <h3>{monster}</h3>
+            <h3>{monster.name}</h3>
         </div>
     )
 }
