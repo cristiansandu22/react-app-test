@@ -1,8 +1,8 @@
 import { ChangeEventHandler } from "react";
 
 type SearchBoxProps = {
-    inputPlaceholder: 'string',
-    inputClassName?: 'string',
+    inputPlaceholder: string,
+    inputClassName?: string,
     onChangeHandler: ChangeEventHandler<HTMLInputElement>
 }
 

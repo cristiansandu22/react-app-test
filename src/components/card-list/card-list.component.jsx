@@ -1,5 +1,5 @@
 import './card-list.styles.css'
-import Card from "../card/card.component.jsx";
+import Card from "../card/card.component.tsx";
 
 const CardList = ({monsters}) => {
 
