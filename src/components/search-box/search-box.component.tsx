@@ -1,5 +1,12 @@
+import { ChangeEventHandler } from "react";
 
-const SearchBox = ({onChangeHandler, inputPlaceholder, inputClassName}) => {
+type SearchBoxProps = {
+    inputPlaceholder: 'string',
+    inputClassName?: 'string',
+    onChangeHandler: ChangeEventHandler<HTMLInputElement>
+}
+
+const SearchBox = ({onChangeHandler, inputPlaceholder, inputClassName}: SearchBoxProps) => {
 
     return(
         <div>
@@ -7,7 +14,7 @@ const SearchBox = ({onChangeHandler, inputPlaceholder, inputClassName}) => {
                 type='search'
                 className={inputClassName}
                 placeholder={inputPlaceholder}
-                onChange={(e) => onChangeHandler(e)}
+                onChange={onChangeHandler}
             />
         </div>
     )
