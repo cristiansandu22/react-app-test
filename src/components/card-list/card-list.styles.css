@@ -1,7 +1,7 @@
 .grid {
     margin-top: 40px;
-    width: 85vw;
+    width: 50vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 }

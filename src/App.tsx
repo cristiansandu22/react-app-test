@@ -11,8 +11,6 @@ export type Monster = {
 
 const App = () => {
 
-    console.log('render');
-
     const [searchField, setSearchField] = useState('')
     const [monsters, setMonsters] = useState<Monster[]>([])
     const [filteredMonsters, setFilteredMonster] = useState(monsters)
