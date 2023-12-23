@@ -50,6 +50,8 @@ const App = () => {
             />
 
             <CardList monsters={filteredMonsters} />
+
+            <div className='divider'></div>
         </>
     )
 }

@@ -4,3 +4,8 @@
   text-align: center;
 }
 
+.divider {
+  height: 1px;
+  margin-top: 40px;
+  background-color: white;
+}
