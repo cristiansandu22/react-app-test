@@ -24,15 +24,6 @@ const App = () => {
 
     //-----fetch monsters when the component is initially rendered------------------------------------------------------
     useEffect(() => {
-            // const fetchData = async () => {
-            //     try {
-            //         const response = await fetch('https://jsonplaceholder.typicode.com/users')
-            //         const usersData = await response.json()
-            //         setMonsters(usersData)
-            //     } catch (err) {
-            //         console.error(`You have an error which is: ${err}`)
-            //     }
-            // }
 
         const fetchUsers = async () => {
             const users = await getData<Monster[]>('https://jsonplaceholder.typicode.com/users')
