@@ -6,6 +6,7 @@ type CardListProps = {
     monsters: Monster[]
 }
 
+//test
 
 const CardList = ({monsters}: CardListProps) => {
 
