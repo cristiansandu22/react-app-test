@@ -3,6 +3,9 @@ import {useEffect, useState, ChangeEvent} from "react";
 import CardList from "./components/card-list/card-list.component.tsx";
 import SearchBox from "./components/search-box/search-box.component.tsx";
 import getData from "./helpers/data.helper.ts";
+import Cake from "./components/redux-components/Cake.tsx";
+import IceCream from "./components/redux-components/IceCream.tsx";
+import Users from "./components/redux-components/Users.tsx";
 
 export type Monster = {
     id: string;
@@ -52,6 +55,10 @@ const App = () => {
             <CardList monsters={filteredMonsters} />
 
             <div className='divider'></div>
+
+            <Cake />
+            <IceCream />
+            <Users />
         </>
     )
 }

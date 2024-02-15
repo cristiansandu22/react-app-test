@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialStateCake = {
-    numOfCakes: 10
+    numOfCakes: 10,
 };
 
 const cakeSlice = createSlice({
