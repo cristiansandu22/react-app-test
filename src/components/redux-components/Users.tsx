@@ -1,7 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
 import {JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect} from "react";
-// @ts-ignore
-import {fetchUsers} from "../../features/user/userSlice.js";
+import {fetchUsers} from "../../features/user/userSlice.ts";
 
 const Users = () => {
 
@@ -10,7 +9,8 @@ const Users = () => {
     const user = useSelector(state => state.user)
 
     useEffect(() => {
-        dispatch(fetchUsers())
+        // @ts-ignore
+        dispatch(fetchUsers('https://jsonplaceholder.typicode.com/users'))
     }, []);
 
     return (

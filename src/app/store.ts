@@ -1,7 +1,7 @@
 import {configureStore} from "@reduxjs/toolkit";
-import cakeSlice from "../features/cake/cakeSlice.js";
-import iceCreamSlice from "../features/icecream/iceCreamSlice.js";
-import userSlice from "../features/user/userSlice.js";
+import cakeSlice from "../features/cake/cakeSlice.ts";
+import iceCreamSlice from "../features/icecream/iceCreamSlice.ts";
+import userSlice from "../features/user/userSlice.ts";
 
 const cakeReducer = cakeSlice.reducer;
 const iceCreamReducer = iceCreamSlice.reducer;
@@ -16,3 +16,6 @@ const store = configureStore({
 })
 
 export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+

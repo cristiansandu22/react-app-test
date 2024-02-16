@@ -1,7 +1,5 @@
 import {useSelector, useDispatch} from "react-redux";
-// @ts-ignore
-import cakeSlice from "../../features/cake/cakeSlice.js";
-
+import cakeSlice from "../../features/cake/cakeSlice.ts";
 
 const Cake = () => {
 
